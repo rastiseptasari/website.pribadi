@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasti Septa Sari - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #292F36;
+            --light: #F7FFF7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            object-fit: cover;
+            background-color: var(--light);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            margin: 10px auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .skills-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skills-title {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .skills-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            height: 20px;
+            width: 4px;
+            background-color: var(--secondary);
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 12px;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .skills-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        .portfolio-title {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .portfolio-description {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+     
+            <https://imgur.com/a/XHZw1bu>
+            <h1>Rasti Septa Sari</h1>
+            <p class="tagline">Ekonomi Syariah | Content Creator | Financial Analyst</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/rasti-septa-sari" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.youtube.com/@rastiseptasari5223" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/rsptsri_" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Kontak</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>rastiseptasari@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>081369980945</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <p>ig.rsptsri_</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Kompetensi</h2>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3 class="skills-title">Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li>Komunikasi Efektif</li>
+                        <li>Kerjasama Tim</li>
+                        <li>Kepemimpinan</li>
+                        <li>Manajemen Waktu</li>
+                        <li>Kemampuan Adaptasi</li>
+                        <li>Kreativitas</li>
+                        <li>Kemampuan Negosiasi</li>
+                        <li>Penyelesaian Masalah</li>
+                        <li>Kecerdasan Emosional</li>
+                        <li>Tanggung Jawab</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h3 class="skills-title">Hard Skills</h3>
+                    <ul class="skills-list">
+                        <li>Public Speaking & Presentasi</li>
+                        <li>Bisnis Plan</li>
+                        <li>Pencatatan dan Jurnal Akuntansi</li>
+                        <li>Memeriksa Kesesuaian Data Kas dan Rekening Bank</li>
+                        <li>Microsoft Excel Basic (Perhitungan Keuangan)</li>
+                        <li>Pembuatan Laporan Keuangan Sederhana (Laba Rugi, Neraca)</li>
+                        <li>Pembuatan Konten Social Media (Ekonomi Syariah)</li>
+                        <li>Google Workspace</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Portofolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="LinkedIn Profile" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">LinkedIn</h3>
+                        <p class="portfolio-description">
+                            Profil profesional saya dengan pengalaman di bidang Ekonomi Syariah dan Keuangan. 
+                            Aktif berbagi pengetahuan tentang prinsip ekonomi Islam dan pengelolaan keuangan.
+                        </p>
+                        <a href="https://www.linkedin.com/in/rasti-septa-sari" target="_blank" class="portfolio-link">Lihat Profil</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="YouTube Channel" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">YouTube</h3>
+                        <p class="portfolio-description">
+                            Konten edukatif tentang ekonomi syariah, tips pengelolaan keuangan, dan pembahasan 
+                            isu-isu ekonomi terkini dengan perspektif Islam.
+                        </p>
+                        <a href="https://www.youtube.com/@rastiseptasari5223" target="_blank" class="portfolio-link">Kunjungi Channel</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/200" alt="Content Creation" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Konten Kreator</h3>
+                        <p class="portfolio-description">
+                            Membuat berbagai konten edukasi tentang keuangan syariah, investasi halal, dan 
+                            prinsip-prinsip ekonomi Islam untuk berbagai platform media sosial.
+                        </p>
+                        <a href="https://www.instagram.com/rsptsri_" target="_blank" class="portfolio-link">Lihat Karya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rasti Septa Sari. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
